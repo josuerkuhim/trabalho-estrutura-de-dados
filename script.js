@@ -77,6 +77,45 @@ const pilha = [];
         filaElemento.innerHTML = fila.join(", ");
       }
 
+//lista
+      class Lista {
+        constructor() {
+          this.items = [];
+        }
+
+        add(value) {
+          this.items.push(value);
+        }
+
+        remove(value) {
+          const index = this.items.indexOf(value);
+          if (index !== -1) {
+            this.items.splice(index, 1);
+          }
+        }
+
+        display() {
+          return this.items.join(", ");
+        }
+      }
+
+      const lista = new Lista();
+      const listaElemento = document.getElementById("lista");
+
+      function inserirNumeroLista() {
+        const numero = parseInt(prompt("Digite um número para adicionar à lista:"));
+        lista.add(numero);
+      }
+
+      function removerNumeroLista() {
+        const numero = parseInt(prompt("Digite um número para remover da lista:"));
+        lista.remove(numero);
+      }
+
+      function exibirLista() {
+        listaElemento.innerHTML = lista.display();
+      }
+
 //arvore
       class Node {
         constructor(value) {
@@ -205,43 +244,4 @@ const pilha = [];
           displayTree(node.left, element);
           displayTree(node.right, element);
         }
-      }
-
-//lista
-      class Lista {
-        constructor() {
-          this.items = [];
-        }
-
-        add(value) {
-          this.items.push(value);
-        }
-
-        remove(value) {
-          const index = this.items.indexOf(value);
-          if (index !== -1) {
-            this.items.splice(index, 1);
-          }
-        }
-
-        display() {
-          return this.items.join(", ");
-        }
-      }
-
-      const lista = new Lista();
-      const listaElemento = document.getElementById("lista");
-
-      function inserirNumeroLista() {
-        const numero = parseInt(prompt("Digite um número para adicionar à lista:"));
-        lista.add(numero);
-      }
-
-      function removerNumeroLista() {
-        const numero = parseInt(prompt("Digite um número para remover da lista:"));
-        lista.remove(numero);
-      }
-
-      function exibirLista() {
-        listaElemento.innerHTML = lista.display();
       }
