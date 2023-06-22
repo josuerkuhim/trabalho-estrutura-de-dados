@@ -35,7 +35,7 @@ const pilha = [];
         loadFila();
       }
 
-      function removeFirstFila() {
+      function removeFila() {
         fila.shift();
         loadFila();
       }
