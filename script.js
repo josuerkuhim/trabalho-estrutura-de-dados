@@ -3,40 +3,25 @@
 const pilha = [];
       const pilhaElemento = document.getElementById("pilha");
 
-      function inserirNumeroAleatorioPilha() {
+      function insertPilha() {
         const numero = Math.floor(Math.random() * 100);
         pilha.push(numero);
-        atualizarPilha();
+        loadPilha();
       }
 
-      function inserirDezNumerosAleatoriosPilha() {
-        for (let i = 0; i < 10; i++) {
-          const numero = Math.floor(Math.random() * 100);
-          pilha.push(numero);
-        }
-        atualizarPilha();
-      }
-
-      function removerUltimo() {
+      function removePilha() {
         pilha.pop();
-        atualizarPilha();
+        loadPilha();
       }
 
-      function removerDezNumerosAleatoriosPilha() {
-        for (let i = 0; i < 10; i++) {
-          pilha.pop();
-        }
-        atualizarPilha();
-      }
-
-      function removerTodos() {
+      function removeAllPilha() {
         while (pilha.length > 0) {
           pilha.pop();
         }
-        atualizarPilha();
+        loadPilha();
       }
 
-      function atualizarPilha() {
+      function loadPilha() {
         pilhaElemento.innerHTML = pilha.join(", ");
       }
 
@@ -44,36 +29,25 @@ const pilha = [];
       const fila = [];
       const filaElemento = document.getElementById("fila");
 
-      function inserirNumeroAleatorioFila() {
+      function insertFila() {
         const numero = Math.floor(Math.random() * 100);
         fila.push(numero);
-        atualizarFila();
+        loadFila();
       }
 
-      function inserirDezNumerosAleatoriosFila() {
-        for (let i = 0; i < 10; i++) {
-          inserirNumeroAleatorioFila();
-        }
-      }
-
-      function removerPrimeiroDaFila() {
+      function removeFirstFila() {
         fila.shift();
-        atualizarFila();
+        loadFila();
       }
 
-      function removerPrimeirosDez() {
-        fila.splice(0, 10);
-        atualizarFila();
-      }
-
-      function removerTudoDaFila() {
+      function removeAllFila() {
         while (fila.length > 0) {
           fila.pop();
         }
-        atualizarFila();
+        loadFila();
       }
 
-      function atualizarFila() {
+      function loadFila() {
         filaElemento.innerHTML = fila.join(", ");
       }
 
@@ -102,12 +76,12 @@ const pilha = [];
       const lista = new Lista();
       const listaElemento = document.getElementById("lista");
 
-      function inserirNumeroLista() {
+      function insertLista() {
         const numero = parseInt(prompt("Digite um número para adicionar à lista:"));
         lista.add(numero);
       }
 
-      function removerNumeroLista() {
+      function removeLista() {
         const numero = parseInt(prompt("Digite um número para remover da lista:"));
         lista.remove(numero);
       }
@@ -203,39 +177,31 @@ const pilha = [];
         removeValue() {
           const value = parseInt(prompt("Insira um valor para remover da árvore:"));
           this.remove(value);
-          atualizarArvore();
+          loadArvore();
         }
       }
 
       const arvore = new BinaryTree();
-      const arvoreElemento = document.getElementById("arvore");
+      const arvoreElement = document.getElementById("arvore");
 
-      function inserirNumeroAleatorioArvore() {
+      function insertArvore() {
         const numero = Math.floor(Math.random() * 100);
         arvore.insert(numero);
-        atualizarArvore();
+        loadArvore();
       }
 
-      function inserirDezNumerosAleatoriosArvore() {
-        for (let i = 0; i < 10; i++) {
-          const numero = Math.floor(Math.random() * 100);
-          arvore.insert(numero);
-        }
-        atualizarArvore();
-      }
-
-      function removerNumeroArvore() {
+      function removeArvore() {
         arvore.removeValue();
       }
 
-      function removerTodosArvore() {
+      function removeAllArvore() {
         arvore.root = null;
-        atualizarArvore();
+        loadArvore();
       }
 
-      function atualizarArvore() {
-        arvoreElemento.innerHTML = "";
-        displayTree(arvore.root, arvoreElemento);
+      function loadArvore() {
+        arvoreElement.innerHTML = "";
+        displayTree(arvore.root, arvoreElement);
       }
 
       function displayTree(node, element) {
