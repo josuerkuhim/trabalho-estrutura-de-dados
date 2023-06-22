@@ -1,4 +1,6 @@
-      const pilha = [];
+
+//pilha
+const pilha = [];
       const pilhaElemento = document.getElementById("pilha");
 
       function inserirNumeroAleatorioPilha() {
@@ -38,7 +40,7 @@
         pilhaElemento.innerHTML = pilha.join(", ");
       }
 
-
+//fila
       const fila = [];
       const filaElemento = document.getElementById("fila");
 
@@ -75,7 +77,7 @@
         filaElemento.innerHTML = fila.join(", ");
       }
 
-
+//arvore
       class Node {
         constructor(value) {
           this.value = value;
@@ -160,7 +162,7 @@
         }
 
         removeValue() {
-          const value = parseInt(prompt("Enter a value to remove from the tree:"));
+          const value = parseInt(prompt("Insira um valor para remover da árvore:"));
           this.remove(value);
           atualizarArvore();
         }
@@ -205,7 +207,7 @@
         }
       }
 
-
+//lista
       class Lista {
         constructor() {
           this.items = [];
@@ -231,12 +233,12 @@
       const listaElemento = document.getElementById("lista");
 
       function inserirNumeroLista() {
-        const numero = parseInt(prompt("Enter a number to add to the list:"));
+        const numero = parseInt(prompt("Digite um número para adicionar à lista:"));
         lista.add(numero);
       }
 
       function removerNumeroLista() {
-        const numero = parseInt(prompt("Enter a number to remove from the list:"));
+        const numero = parseInt(prompt("Digite um número para remover da lista:"));
         lista.remove(numero);
       }
 
